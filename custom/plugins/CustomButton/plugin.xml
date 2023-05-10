@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/main/src/Core/Framework/App/plugin.xsd">
+    <name>Custom Button</name>
+    <author>Valerii Sviatnenko</author>
+    <version>1.0.0</version>
+    <label>Custom Button</label>
+    <description>Change add to cart button color</description>
+    <autoload>
+        <psr-4>
+            <CustomButton\\>src/
+        </psr-4>
+    </autoload>
+    <routes>
+        <route name="custom_button.storefront.add_to_cart_button_color" path="/custom-button/add-to-cart-button-color" method="POST"/>
+        <route name="custom_button.admin.config" path="/api/v{version}/_action/custom-button/save-config" method="POST" entity="custom_button.config"/>
+    </routes>
+    <entities>
+        <entity name="custom_button.config" />
+    </entities>
+</plugin>

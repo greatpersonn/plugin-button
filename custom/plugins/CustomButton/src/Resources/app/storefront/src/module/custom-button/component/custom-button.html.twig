@@ -1,0 +1,20 @@
+<template>
+    <button class="my-custom-button" :style="{ backgroundColor: buttonColor }">
+        {{ 'custom-button.general.buttonText' | trans }}
+    </button>
+</template>
+
+<script>
+    const { Component } = Shopware;
+
+    Component.register('custom-button', {
+        computed: {
+            buttonColor() {
+                // Отримати значення кольору кнопки зі збережених налаштувань плагіна
+                const buttonColor = this.$store.state.myCustomPlugin.config.buttonColor;
+                // Повернути значення кольору або значення за замовчуванням
+                return buttonColor || 'red';
+            }
+        }
+    });
+</script>
