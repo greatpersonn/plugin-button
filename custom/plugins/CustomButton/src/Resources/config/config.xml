@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
-    <fields>
+    <card>
         <field name="buttonColor" type="single-select">
             <label>Button Color</label>
             <helpText>Select the color for the add to cart button.</helpText>
@@ -16,5 +16,5 @@
                 </config>
             </component>
         </field>
-    </fields>
+    </card>
 </config>
