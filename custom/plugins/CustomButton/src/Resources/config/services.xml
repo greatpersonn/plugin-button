@@ -1,19 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/main/src/Core/System/SystemConfig/Schema/config.xsd">
-    <fields>
-        <field name="buttonColor" type="single-select">
-            <label>Button Color</label>
-            <helpText>Select the color for the add to cart button.</helpText>
-            <component>
-                <name>sw-single-select</name>
-                <config>
-                    <options>
-                        <option label="Red" value="red"/>
-                        <option label="Green" value="green"/>
-                        <option label="Blue" value="blue"/>
-                    </options>
-                </config>
-            </component>
-        </field>
-    </fields>
-</config>
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="CustomButton\Subscriber\Subscriber">
+            <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService" />
+            <tag name="kernel.event_subscriber"/>
+        </service>
+    </services>
+</container>
